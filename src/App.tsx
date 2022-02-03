@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Link, Outlet } from 'react-router-dom';
 import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Spotify search</h1>
+      <nav
+        style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem"
+        }}
+      >
+        <Link to="/artist-detail">Artist Detail</Link> |{" "}
+        <Link to="/track-detail">Track Detail</Link> |{" "}
+        <Link to="/album-detail">Album Detail</Link>
+      </nav>
+      <Outlet />
+      <main style={{ padding: "1rem 0" }}>
+        <h2>Search results</h2>
+      </main>
     </div>
   );
 }
