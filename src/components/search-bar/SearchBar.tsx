@@ -27,7 +27,7 @@ export class SearchBar extends React.Component<Props, State> {
       advancedSearch: false,
       genQuery: '',
       mediaTypes: [],
-      advQuery: { album: '', artist: '', track: '', year: '' },
+      advQuery: { album: '', artist: '', track: '', year: '', genre: '' },
       lastSearchUpdate: new Date().valueOf(),
       searchTimeoutId: 0
     };

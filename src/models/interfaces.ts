@@ -3,6 +3,7 @@ export interface AdvQuery {
   artist: string;
   track: string;
   year: string;
+  genre: string;
   [key: string]: string;
 }
 
