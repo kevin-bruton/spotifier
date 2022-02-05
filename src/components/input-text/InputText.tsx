@@ -24,7 +24,9 @@ export class InputText extends React.Component<Props, State> {
   render() {
     return (
       <div className="inputtext__container">
-        <span className="inputtext__label">{this.props.label.toUpperCase()}</span>
+        <div className="inputtext__labelcontainer">
+          <span className="inputtext__label">{this.props.label.toUpperCase()}</span>
+        </div>
         <span className="inputtext__icons">
           <img src={searchIcon} className={`inputtext__searchicon${this.props.mode === 'search' ? ' inputtext__searchicon--visible' : ''}`} alt="Search" />
           <img src={clearIcon} className={`inputtext__clearicon${this.state.value ? ' inputtext__clearicon--visible' : ''}`} alt="Clear search" onClick={this.clear.bind(this)}/>

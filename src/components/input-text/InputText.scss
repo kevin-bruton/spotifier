@@ -1,18 +1,16 @@
 .inputtext__container {
-  display: flex;
-  justify-content: center;
 }
 
 .inputtext__icons {
   visibility: hidden;
-  position: relative;
-  top: 10px;
+  position: absolute;
 }
 
 .inputtext__searchicon {
   background-color: var(--neutral-1);
   position: relative;
-  left: 55px;
+  left: 10px;
+  top: 10px;
 }
 
 .inputtext__searchicon--visible {
@@ -22,7 +20,8 @@
 .inputtext__clearicon {
   background-color: var(--neutral-1);
   position: relative;
-  left: 235px;
+  left: 190px;
+  top: 10px;
 }
 
 .inputtext__clearicon--visible {
@@ -45,10 +44,14 @@
   cursor: text;
 }
 
+.inputtext_labelcontainer {
+  position: relative;
+}
+
 .inputtext__label {
   position: relative;
   font-size: 10px;
-  top: 1px;
-  left: 200px;
+  top: 15px;
+  left: 0px;
   color: var(--text-4);
 }
