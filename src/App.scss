@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.app__theme--dark {
+  --neutral-1: rgb(255, 255, 255);
+  --neutral-2: rgb(0, 0, 0);
+  --accent-1: rgb(60, 100, 240);
+  --accent-1b: rgb(70, 110, 250);
+  --base-0: rgb(0, 0, 2);
+  --base-1: rgb(15, 15, 15);
+  --base-2: rgb(25, 25, 25);
+  --base-3: rgb(35, 35, 35);
+  --base-4: rgb(45, 45, 45);
+  --functional-blue: rgb(20, 120, 220);
+  --functional-red: rgb(220, 40, 40);
+  --functional-yellow: rgb(220, 160, 40);
+  --functional-green: rgb(40, 160, 40);
+  --text-1: rgba(255, 255, 255, .90);
+  --text-2: rgba(255, 255, 255, .60);
+  --text-3: rgba(255, 255, 255, .20);
+  --text-4: rgb(102, 102, 102);
+  --shadow-1: 0 2px 8px rgba(0,0,0,.2), 0 1px 4px rgba(0,0,0,.15);
+  --spotify-green: #1ED760;
+}
