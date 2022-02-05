@@ -1,0 +1,54 @@
+.inputtext__container {
+  display: flex;
+  justify-content: center;
+}
+
+.inputtext__icons {
+  visibility: hidden;
+  position: relative;
+  top: 10px;
+}
+
+.inputtext__searchicon {
+  background-color: var(--neutral-1);
+  position: relative;
+  left: 55px;
+}
+
+.inputtext__searchicon--visible {
+  visibility: visible;
+}
+
+.inputtext__clearicon {
+  background-color: var(--neutral-1);
+  position: relative;
+  left: 235px;
+}
+
+.inputtext__clearicon--visible {
+  visibility: visible;
+}
+
+.inputtext__input {
+  border: 0;
+  border-radius: 500px;
+  height: 30px;
+  padding: 6px 48px;
+  text-overflow: ellipsis;
+  width: 150px;
+
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 16px;
+  text-transform: none;
+  cursor: text;
+}
+
+.inputtext__label {
+  position: relative;
+  font-size: 10px;
+  top: 1px;
+  left: 200px;
+  color: var(--text-4);
+}
