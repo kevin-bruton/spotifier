@@ -1,0 +1,41 @@
+.searchbar {
+  height: 200px;
+  background-color: var(--neutral-2);
+  text-align: center;
+  transition: height 2s;
+  overflow: hidden;
+}
+
+.searchbar__showadvanced {
+  height: 420px;
+}
+
+.searchbar__heading {
+  font-size: 2em;
+  color: var(--text-2);
+}
+
+.searchbar__form {
+  margin: 30px 0;
+  color: var(--text-1);
+  display: grid;
+  justify-items: center;
+}
+
+.searchbar__categoryinputs {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 30px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+}
+
+.checkbox__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
