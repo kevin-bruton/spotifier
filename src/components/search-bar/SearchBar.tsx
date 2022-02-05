@@ -101,15 +101,18 @@ export class SearchBar extends React.Component<Props, State> {
       <div className={`searchbar${this.state.advancedSearch ? ' searchbar__showadvanced' : ''}`}>
         <span className="searchbar__heading">Search for your favourite artists, albums and tracks</span>
         <form className="searchbar__form">
-          <InputText mode="search" placeholder="Artist, album or track" label="" name="search_main" onChange={this.searchChanged.bind(this)} />
-          <ArrowButton text="Advanced search" onClick={this.advSearchOptionChanged.bind(this)} />
-          <div>
+          <div className="searchbar__form-gen-input">
+            <InputText mode="search" placeholder="Artist, album or track" label="" name="search_main" onChange={this.searchChanged.bind(this)} />
+            <ArrowButton text="Advanced search" onClick={this.advSearchOptionChanged.bind(this)} />
+          </div>
+          <div className={this.state.advancedSearch ? 'searchbar_advancedarea--show' : 'searchbar_advancedarea--hide'}>
             <div>Narrow down your search:</div>
             <div className="searchbar__categoryinputs">
               <InputText mode="search" placeholder="" label="Artist" name="search_artist" onChange={this.searchChanged.bind(this)} />
               <InputText mode="search" placeholder="" label="Album" name="search_album" onChange={this.searchChanged.bind(this)} />
               <InputText mode="search" placeholder="" label="Track" name="search_track" onChange={this.searchChanged.bind(this)} />
               <InputText mode="search" placeholder="" label="Year" name="search_year" onChange={this.searchChanged.bind(this)} />
+              <InputText mode="search" placeholder="" label="Genre" name="search_genre" onChange={this.searchChanged.bind(this)} />
             </div>
             <div className="checkbox__container">
               Media type:

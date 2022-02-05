@@ -1,13 +1,25 @@
 .searchbar {
-  height: 200px;
+  max-height: 160px;
   background-color: var(--neutral-2);
   text-align: center;
-  transition: height 2s;
+  transition: max-height 1s ease-out;
   overflow: hidden;
 }
 
 .searchbar__showadvanced {
-  height: 420px;
+  max-height: 500px;
+  transition: max-height 1s ease-in;
+}
+
+.searchbar_advancedarea--hide {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.searchbar_advancedarea--show {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 0.5s;
 }
 
 .searchbar__heading {
@@ -16,21 +28,28 @@
 }
 
 .searchbar__form {
-  margin: 30px 0;
+  margin-top: 30px;
   color: var(--text-1);
   display: grid;
   justify-items: center;
 }
 
+.searchbar__form-gen-input {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr;
+  justify-items: center;
+  align-items: end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .searchbar__categoryinputs {
   margin-top: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-  row-gap: 30px;
-  justify-items: center;
-  align-items: center;
-  max-width: 1000px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .checkbox__container {
