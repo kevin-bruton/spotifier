@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AlbumDetail from './routes/album-detail';
-import ArtistDetail from './routes/artist-detail';
-import TrackDetail from './routes/track-detail';
+import AlbumDetail from './components/album-detail';
+import ArtistDetail from './components/artist-detail';
+import TrackDetail from './components/track-detail';
 
 ReactDOM.render(
   <React.StrictMode>
