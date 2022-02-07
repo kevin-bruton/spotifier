@@ -1,0 +1,21 @@
+.itemcard {
+  background-color: var(--base-3);
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  width: min-content;
+}
+
+.itemcard__img {
+  width: 6rem;
+}
+
+.itemcard__title {
+  color: var(--text-2);
+  font-size: 0.8rem;
+}
+
+.itemcard__subtitle {
+  color: var(--text-1);
+  font-size: 0.8rem;
+}
