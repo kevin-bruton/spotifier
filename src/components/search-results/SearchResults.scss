@@ -1,0 +1,35 @@
+.searchresults {
+  background-color: var(--base-1);
+  color: var(--text-1);
+  display: grid;
+}
+
+.searchresults__col-1 {
+  grid-template-columns: 1fr;
+}
+
+.searchresults__col-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.searchresults__col-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.searchresults__category {
+  padding: 10px;
+}
+
+.searchresults__title {
+  background-color: var(--base-1);
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.searchresults__items {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
