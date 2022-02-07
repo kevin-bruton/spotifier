@@ -45,16 +45,18 @@
 }
 
 .searchbar__categoryinputs {
-  margin-top: 30px;
   display: flex;
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.checkbox__container {
+.searchbar__checkboxesheader {
+  margin-top: 20px;
+}
+
+.searchbar__checkboxes {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
 }

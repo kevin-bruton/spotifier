@@ -26,7 +26,7 @@ export class SearchBar extends React.Component<Props, State> {
     this.state = {
       advancedSearch: false,
       genQuery: '',
-      mediaTypes: [],
+      mediaTypes: ['album', 'track', 'artist'],
       advQuery: { album: '', artist: '', track: '', year: '', genre: '' },
       lastSearchUpdate: new Date().valueOf(),
       searchTimeoutId: 0
@@ -40,13 +40,7 @@ export class SearchBar extends React.Component<Props, State> {
       || prevState.advQuery.artist !== this.state.advQuery.artist
       || prevState.advQuery.track !== this.state.advQuery.track
       || prevState.advQuery.year !== this.state.advQuery.year;
-    const queryNotEmpty = !(this.state.genQuery === ''
-      && this.state.advQuery.album === ''
-      && this.state.advQuery.artist === ''
-      && this.state.advQuery.track === ''
-      && this.state.advQuery.year === '');
-    console.log('componentDidUpdate. searchHasUpdated', searchHasUpdated, JSON.stringify(prevState.mediaTypes), JSON.stringify(this.state.mediaTypes))
-    if (searchHasUpdated && queryNotEmpty) {
+    if (searchHasUpdated) {
       const searchTimeoutId = window.setTimeout(() => {
         this.props.onSearchUpdated({
           genQuery: this.state.genQuery,
@@ -73,8 +67,8 @@ export class SearchBar extends React.Component<Props, State> {
       this.setState(state => {
         const mediaTypes = [...state.mediaTypes];
         const removeType = (types: Array<string>, type: string): string[] => (type === mediaType ? types : [...types, ...[type]]);
-        const mediaTypesWithoutType = mediaTypes.reduce(removeType, [])
-        return { mediaTypes: mediaTypesWithoutType };
+        const mediaTypesWithoutType = mediaTypes.reduce(removeType, []);
+        return { mediaTypes: mediaTypesWithoutType.length ? mediaTypesWithoutType: mediaTypes };
       });
     }
   }
@@ -97,6 +91,7 @@ export class SearchBar extends React.Component<Props, State> {
   }
 
   render() {
+    const check = (type: string) => this.state.mediaTypes.includes(type);
     return (
       <div className={`searchbar${this.state.advancedSearch ? ' searchbar__showadvanced' : ''}`}>
         <span className="searchbar__heading">Search for your favourite artists, albums and tracks</span>
@@ -114,14 +109,11 @@ export class SearchBar extends React.Component<Props, State> {
               <InputText mode="search" placeholder="" label="Year" name="search_year" onChange={this.searchChanged.bind(this)} />
               <InputText mode="search" placeholder="" label="Genre" name="search_genre" onChange={this.searchChanged.bind(this)} />
             </div>
-            <div className="checkbox__container">
-              Media type:
-              <CheckBox label="Album" name="mediatype_album" onCheckedChange={this.mediaChecked.bind(this)} />
-              <CheckBox label="Artist" name="mediatype_artist" onCheckedChange={this.mediaChecked.bind(this)} />
-              <CheckBox label="Playlist" name="mediatype_playlist" onCheckedChange={this.mediaChecked.bind(this)} />
-              <CheckBox label="Track" name="mediatype_track" onCheckedChange={this.mediaChecked.bind(this)} />
-              <CheckBox label="Show" name="mediatype_show" onCheckedChange={this.mediaChecked.bind(this)} />
-              <CheckBox label="Episode" name="mediatype_episode" onCheckedChange={this.mediaChecked.bind(this)} />
+            <div className="searchbar__checkboxesheader">Media type (at least one required):</div>
+            <div className="searchbar__checkboxes">
+              <CheckBox label="Track" name="mediatype_track" checked={check('track')} onCheckedChange={this.mediaChecked.bind(this)} />
+              <CheckBox label="Album" name="mediatype_album" checked={check('album')} onCheckedChange={this.mediaChecked.bind(this)} />
+              <CheckBox label="Artist" name="mediatype_artist" checked={check('artist')} onCheckedChange={this.mediaChecked.bind(this)} />
             </div>
           </div>
         </form>

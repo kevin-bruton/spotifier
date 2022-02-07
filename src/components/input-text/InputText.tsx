@@ -19,6 +19,7 @@ export class InputText extends React.Component<Props, State> {
 
   clear() {
     this.setState({ value: '' });
+    this.props.onChange({ name: this.props.name, value: '' });
   }
 
   render() {
