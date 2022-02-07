@@ -6,13 +6,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AlbumDetail from './components/album-detail';
 import ArtistDetail from './components/artist-detail';
-import TrackDetail from './components/track-detail';
+import { TrackDetail } from './components/track-detail/TrackDetail';
+import { SearchResults } from './components/search-results/SearchResults';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route path="search-results" element={<SearchResults tracks={[]} albums={[]} artists={[]} />} />
           <Route path="album-detail" element={<AlbumDetail />} />
           <Route path="artist-detail" element={<ArtistDetail />} />
           <Route path="track-detail" element={<TrackDetail />} />
