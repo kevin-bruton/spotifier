@@ -1,7 +1,7 @@
 import React from 'react';
 import './CheckBox.scss';
 
-type Props = { label: string, onCheckedChange: Function, name: string };
+type Props = { label: string, checked: boolean, onCheckedChange: Function, name: string };
 export class CheckBox extends React.Component<Props, {}> {
   checked(e: React.ChangeEvent<HTMLInputElement>) {
     this.props.onCheckedChange({name: this.props.name, checked: e.target.checked});
@@ -10,7 +10,7 @@ export class CheckBox extends React.Component<Props, {}> {
   render() {
     return (
       <label className="checkbox__label">
-        <input type="checkbox" className="checkbox__input" onChange={this.checked.bind(this)}/>
+        <input type="checkbox" className="checkbox__input" checked={this.props.checked} onChange={this.checked.bind(this)}/>
         <span className="checkbox__span">{this.props.label}</span> 
       </label>
     );
