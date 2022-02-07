@@ -8,7 +8,7 @@ export {
 
 let token: string;
 const baseUrl = 'https://api.spotify.com/v1/';
-const SEARCH_RESULTS_LIMIT = 10;
+const SEARCH_RESULTS_LIMIT = 20;
 
 async function getAuthToken (): Promise<string> {
   const url: string = 'https://accounts.spotify.com/api/token'
@@ -41,8 +41,36 @@ async function getSearchResults ({ genQuery, advQuery, mediaTypes }: SearchQuery
     + `&offset=${offset}`;
   const headers: HeadersInit = { Authorization: `Bearer ${token}` };
   const resp = await fetch(url.toString(), { headers });
-  const json = await resp.json();
-  return json;
+  if (resp.status === 401) {
+    token = await getAuthToken()
+    const resp = await fetch(url.toString(), { headers });
+    return responseMapper(await resp.json());
+  }
+  const jsonResp = await resp.json();
+  return responseMapper(jsonResp);
+}
+
+function responseMapper({ tracks, albums, artists }:any) {
+  return {
+    tracks: tracks?.items?.map((item:any) => ({
+      name: item.name,
+      previewUrl: item.preview_url,
+      externalUrl: item.external_urls?.spotify,
+      imageUrl: item.album?.images?.[item.album?.images?.length - 1]?.url,
+      artist: item.artists[0]?.name
+    })),
+    albums: albums?.items?.map((item:any) => ({
+      name: item.name,
+      artist: item.artists[0]?.name,
+      imageUrl: item.images?.[item.images?.length - 1]?.url,
+      externalUrl: item.external_urls?.spotify
+    })),
+    artists: artists?.items?.map((item:any) => ({
+      name: item.name,
+      imageUrl: item.images?.[item.images?.length - 1]?.url,
+      externalUrl: item.external_urls?.spotify
+    }))
+  };
 }
 
 async function getSearchResultsViaUrl (url: string) {
