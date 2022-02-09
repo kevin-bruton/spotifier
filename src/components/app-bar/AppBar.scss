@@ -1,9 +1,10 @@
 .appbar {
   background-color: var(--neutral-2);
-  height: 150px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .appbar__img {
-  height: 100%;
-  width: 100%;
+  width: 25%;
 }

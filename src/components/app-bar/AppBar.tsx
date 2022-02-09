@@ -1,6 +1,6 @@
 import React from 'react';
 import './AppBar.scss';
-import spotifyBackgroundSvg from '../../assets/Spotify-Logo.svg';
+import spotifyBackgroundSvg from '../../assets/spotify-empathy-logo.svg';
 
 export class AppBar extends React.Component {
   render() {
