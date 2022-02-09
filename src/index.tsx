@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AlbumDetail from './components/album-detail';
-import ArtistDetail from './components/artist-detail';
-import { TrackDetail } from './components/track-detail/TrackDetail';
+import AlbumDetail from './components/album-detail/AlbumDetail';
+import ArtistDetail from './components/artist-detail/ArtistDetail';
+import TrackDetail from './components/track-detail/TrackDetail';
 import { SearchResults } from './components/search-results/SearchResults';
 
 ReactDOM.render(

@@ -1,5 +1,5 @@
 import { Buffer } from 'buffer';
-import { SearchQuery } from '../models/interfaces'
+import { SearchQuery, Track, Album, Artist } from '../models/interfaces'
 
 export {
   getSearchResults,
@@ -8,7 +8,7 @@ export {
 
 let token: string;
 const baseUrl = 'https://api.spotify.com/v1/';
-const SEARCH_RESULTS_LIMIT = 20;
+const SEARCH_RESULTS_LIMIT = 50;
 
 async function getAuthToken (): Promise<string> {
   const url: string = 'https://accounts.spotify.com/api/token'
@@ -52,23 +52,39 @@ async function getSearchResults ({ genQuery, advQuery, mediaTypes }: SearchQuery
 
 function responseMapper({ tracks, albums, artists }:any) {
   return {
-    tracks: tracks?.items?.map((item:any) => ({
+    tracks: tracks?.items?.map((item:any): Track => ({
+      id: item.id,
       name: item.name,
       previewUrl: item.preview_url,
       externalUrl: item.external_urls?.spotify,
       imageUrl: item.album?.images?.[item.album?.images?.length - 1]?.url,
-      artist: item.artists[0]?.name
+      imageUrlBig: item.album?.images?.[0]?.url,
+      artist: item.artists[0]?.name,
+      albumName: item.album?.name,
+      trackNumber: item.track_number,
+      durationMs: item.duration_ms,
+      popularity: item.popularity
     })),
-    albums: albums?.items?.map((item:any) => ({
+    albums: albums?.items?.map((item:any): Album => ({
+      id: item.id,
       name: item.name,
       artist: item.artists[0]?.name,
       imageUrl: item.images?.[item.images?.length - 1]?.url,
-      externalUrl: item.external_urls?.spotify
+      imageUrlBig: item.images?.[0]?.url,
+      externalUrl: item.external_urls?.spotify,
+      type: item.album_type,
+      releaseDate: item.release_date,
+      totalTracks: item.total_tracks
     })),
-    artists: artists?.items?.map((item:any) => ({
+    artists: artists?.items?.map((item:any): Artist => ({
+      id: item.id,
       name: item.name,
       imageUrl: item.images?.[item.images?.length - 1]?.url,
-      externalUrl: item.external_urls?.spotify
+      imageUrlBig: item.images?.[0]?.url,
+      externalUrl: item.external_urls?.spotify,
+      popularity: item.popularity,
+      genres: item.genres?.join(),
+      followers: item.followers?.total
     }))
   };
 }

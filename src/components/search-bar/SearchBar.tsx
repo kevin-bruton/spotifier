@@ -39,7 +39,8 @@ export class SearchBar extends React.Component<Props, State> {
       || prevState.advQuery.album !== this.state.advQuery.album
       || prevState.advQuery.artist !== this.state.advQuery.artist
       || prevState.advQuery.track !== this.state.advQuery.track
-      || prevState.advQuery.year !== this.state.advQuery.year;
+      || prevState.advQuery.year !== this.state.advQuery.year
+      || prevState.advQuery.genre !== this.state.advQuery.genre;
     if (searchHasUpdated) {
       const searchTimeoutId = window.setTimeout(() => {
         this.props.onSearchUpdated({

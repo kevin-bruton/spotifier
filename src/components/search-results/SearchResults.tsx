@@ -8,9 +8,6 @@ type Props = { tracks: Array<Track>, albums: Array<Album>, artists: Array<Artist
 
 export class SearchResults extends React.Component<Props, {}> {
   render() {
-    console.log('Tracks. Defined:', !!this.props.tracks, 'Length:', this.props.tracks?.length)
-    console.log('Albums. Defined:', !!this.props.albums, 'Length:', this.props.albums?.length)
-    console.log('Artists. Defined:', !!this.props.artists, 'Length:', this.props.artists?.length)
     const { tracks = [], albums = [], artists = [] } = this.props;
     const numColumns = (tracks.length ? 1 : 0)
       + (albums.length ? 1 : 0)
@@ -22,7 +19,7 @@ export class SearchResults extends React.Component<Props, {}> {
               <div className="searchresults__title">TRACKS</div>
               <div className="searchresults__items">
                 {tracks.map((track: Track, i: number) =>
-                  <Link to="/track-detail"><ItemCard key={i} title={track.name} subtitle={track.artist} imageurl={track.imageUrl} /></Link>
+                  <Link key={track.id} state={track} to="/track-detail"><ItemCard title={track.name} subtitle={track.artist} imageurl={track.imageUrl} /></Link>
                 )}
               </div>
             </div>
@@ -32,7 +29,7 @@ export class SearchResults extends React.Component<Props, {}> {
               <div className="searchresults__title">ALBUMS</div>
               <div className="searchresults__items">
                 {albums.map((album: Album, i: number) =>
-                  <ItemCard key={i} title={album.name} subtitle={album.artist} imageurl={album.imageUrl} />
+                  <Link key={album.id} state={album} to="/album-detail"><ItemCard title={album.name} subtitle={album.artist} imageurl={album.imageUrl} /></Link>
                 )}
               </div>
             </div>
@@ -42,7 +39,7 @@ export class SearchResults extends React.Component<Props, {}> {
               <div className="searchresults__title">ARTISTS</div>
               <div className="searchresults__items">
                 {artists.map((artist: Artist, i: number) =>
-                  <ItemCard key={i} title={artist.name} subtitle="" imageurl={artist.imageUrl} />
+                  <Link key={artist.id} state={artist} to="/artist-detail"><ItemCard key={i} title={artist.name} subtitle="" imageurl={artist.imageUrl} /></Link>
                 )}
               </div>
             </div>

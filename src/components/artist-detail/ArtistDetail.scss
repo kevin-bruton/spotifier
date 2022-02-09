@@ -1,11 +1,11 @@
-.trackdetail {
+.artistdetail {
   background-color: var(--neutral-2);
 }
 
-.trackdetail__template {
+.artistdetail__template {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
-  grid-template-rows: 2fr 2fr 1fr;
+  grid-template-rows: 2fr 1fr 2fr;
   grid-template-areas:
     ". image title ."
     ". labels detaildata ."
@@ -13,41 +13,41 @@
   gap: 1rem;
 }
 
-.trackdetail__img {
+.artistdetail__img {
   grid-area: image;
-  width: 35%;
+  width: 50%;
   padding: 2rem;
   justify-self: end;
   align-self: center;
 }
 
-.trackdetail__title {
+.artistdetail__title {
   grid-area: title;
   color: var(--text-1);
   align-self: center;
 }
 
-.trackdetail__titletype {
+.artistdetail__titletype {
   color: var(--text-2);
 }
 
-.trackdetail__titlename {
+.artistdetail__titlename {
   font-size: 2rem;
   margin: 1rem 0;
 }
 
-.trackdetail__titleartist {
+.artistdetail__titleartist {
   font-size: 1.3rem;
   color: var(--text-2);
 }
 
-.trackdetail__player {
+.artistdetail__player {
   grid-area: player;
   justify-self: center;
   padding-left: 5%;
 }
 
-.trackdetail__labels {
+.artistdetail__labels {
   grid-area: labels;
   color: var(--text-2);
   display: flex;
@@ -57,15 +57,16 @@
   padding-left: 60%;  
 }
 
-.trackdetail__detaildata {
+.artistdetail__detaildata {
   grid-area: detaildata;
   color: var(--text-2);
   display: flex;
   flex-direction: column;
+
   gap: 1rem;
   padding-top: 1rem;
 }
 
-.trackdetail__detaildatagoto {
+.artistdetail__detaildatagoto {
   width: 20px;
 }

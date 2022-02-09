@@ -19,7 +19,12 @@ export interface Track {
   previewUrl: string,
   externalUrl: string,
   imageUrl: string,
-  artist: string
+  imageUrlBig: string,
+  artist: string,
+  albumName: string,
+  trackNumber: number,
+  durationMs: number,
+  popularity: number
 }
 
 export interface Album {
@@ -27,12 +32,20 @@ export interface Album {
   name: string,
   artist: string,
   imageUrl: string,
-  externalUrl: string
+  imageUrlBig: string,
+  externalUrl: string,
+  type: string,
+  releaseDate: string,
+  totalTracks: number
 }
 
 export interface Artist {
   id: string,
   name: string,
   imageUrl: string,
-  externalUrl: string
+  imageUrlBig: string,
+  externalUrl: string,
+  popularity: number,
+  genres: string,
+  followers: number
 }
