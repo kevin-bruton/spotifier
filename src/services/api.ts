@@ -79,7 +79,7 @@ function responseMapper({ tracks, albums, artists }:any) {
       imageUrl: item.images?.[item.images?.length - 1]?.url,
       imageUrlBig: item.images?.[0]?.url,
       popularity: item.popularity,
-      genres: item.genres?.join(),
+      genres: item.genres?.join(', '),
       followers: item.followers?.total
     }))
   };

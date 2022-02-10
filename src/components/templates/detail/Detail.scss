@@ -53,7 +53,8 @@
   max-width: 20rem;
   display: grid;
   align-items: center;
-  padding: 5%;
+  justify-items: center;
+  min-width: 26rem;
 }
 
 .detail__table {

@@ -15,7 +15,7 @@ export class ItemCard extends React.Component<Props, State> {
     this.loadImage();
   }
 
-  componentDidUpdate(prevProps: any, prevState: any, snapshot: any) {
+  componentDidUpdate(prevProps: { imageurl: string}) {
     if (prevProps.imageurl !== this.props.imageurl) {
       this.loadImage();
     }

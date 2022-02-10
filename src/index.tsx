@@ -8,6 +8,10 @@ import AlbumDetail from './components/pages/album-detail/AlbumDetail';
 import ArtistDetail from './components/pages/artist-detail/ArtistDetail';
 import TrackDetail from './components/pages/track-detail/TrackDetail';
 import { SearchResults } from './components/pages/search-results/SearchResults';
+import { setLanguage } from './services/literals';
+
+// Initial language would normmally be gotten from browser settings or user preferences
+setLanguage('en');
 
 ReactDOM.render(
   <React.StrictMode>

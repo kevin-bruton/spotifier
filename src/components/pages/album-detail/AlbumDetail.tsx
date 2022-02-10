@@ -37,9 +37,9 @@ class AlbumDetail extends Component<Props, State> {
           imageUrl: imageUrlBig,
           playerSize: 'L',
           data: {
-            'album type': type,
-            'release date': releaseDate,
-            'total tracks': totalTracks
+            'album_type': type,
+            'release_date': releaseDate,
+            'total_tracks': totalTracks
           }
         }}
       </Detail>

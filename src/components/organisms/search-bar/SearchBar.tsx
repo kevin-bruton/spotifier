@@ -4,6 +4,7 @@ import { CheckBox } from '../../atoms/checkbox/CheckBox';
 import { InputText } from '../../molecules/input-text/InputText';
 import { ArrowButton } from '../../molecules/arrow-button/ArrowButton';
 import { AdvQuery } from '../../../models/interfaces';
+import { t } from '../../../services/literals';
 
 const SEARCH_UPDATE_FREQ = 500;
 
@@ -95,26 +96,26 @@ export class SearchBar extends React.Component<Props, State> {
     const check = (type: string) => this.state.mediaTypes.includes(type);
     return (
       <div className={`searchbar${this.state.advancedSearch ? ' searchbar__showadvanced' : ''}`}>
-        <span className="searchbar__heading">Search for your favourite artists, albums and tracks</span>
+        <span className="searchbar__heading">{t('searchbar_heading')}</span>
         <form className="searchbar__form">
           <div className="searchbar__form-gen-input">
-            <InputText mode="search" placeholder="Artist, album or track" label="" name="search_main" onChange={this.searchChanged.bind(this)} />
-            <ArrowButton text="Advanced search" onClick={this.advSearchOptionChanged.bind(this)} />
+            <InputText mode="search" placeholder={t('searchbar_main_input_placeholder')} label="" name="search_main" onChange={this.searchChanged.bind(this)} />
+            <ArrowButton text={t('searchbar_advanced_search')} onClick={this.advSearchOptionChanged.bind(this)} />
           </div>
           <div className={this.state.advancedSearch ? 'searchbar_advancedarea--show' : 'searchbar_advancedarea--hide'}>
-            <div>Narrow down your search:</div>
+            <div>{t('searchbar_adv_search_instructions')}</div>
             <div className="searchbar__categoryinputs">
-              <InputText mode="search" placeholder="" label="Artist" name="search_artist" onChange={this.searchChanged.bind(this)} />
-              <InputText mode="search" placeholder="" label="Album" name="search_album" onChange={this.searchChanged.bind(this)} />
-              <InputText mode="search" placeholder="" label="Track" name="search_track" onChange={this.searchChanged.bind(this)} />
-              <InputText mode="search" placeholder="" label="Year" name="search_year" onChange={this.searchChanged.bind(this)} />
-              <InputText mode="search" placeholder="" label="Genre" name="search_genre" onChange={this.searchChanged.bind(this)} />
+              <InputText mode="search" placeholder="" label={t('mediatype_artist')} name="search_artist" onChange={this.searchChanged.bind(this)} />
+              <InputText mode="search" placeholder="" label={t('mediatype_album')} name="search_album" onChange={this.searchChanged.bind(this)} />
+              <InputText mode="search" placeholder="" label={t('mediatype_track')} name="search_track" onChange={this.searchChanged.bind(this)} />
+              <InputText mode="search" placeholder="" label={t('detail_year')}name="search_year" onChange={this.searchChanged.bind(this)} />
+              <InputText mode="search" placeholder="" label={t('detail_genre')} name="search_genre" onChange={this.searchChanged.bind(this)} />
             </div>
-            <div className="searchbar__checkboxesheader">Media type (at least one required):</div>
+            <div className="searchbar__checkboxesheader">{t('searchbar_mediatype_selection_instruction')}</div>
             <div className="searchbar__checkboxes">
-              <CheckBox label="Track" name="mediatype_track" checked={check('track')} onCheckedChange={this.mediaChecked.bind(this)} />
-              <CheckBox label="Album" name="mediatype_album" checked={check('album')} onCheckedChange={this.mediaChecked.bind(this)} />
-              <CheckBox label="Artist" name="mediatype_artist" checked={check('artist')} onCheckedChange={this.mediaChecked.bind(this)} />
+              <CheckBox label={t('mediatype_track')} name="mediatype_track" checked={check('track')} onCheckedChange={this.mediaChecked.bind(this)} />
+              <CheckBox label={t('mediatype_album')} name="mediatype_album" checked={check('album')} onCheckedChange={this.mediaChecked.bind(this)} />
+              <CheckBox label={t('mediatype_artist')} name="mediatype_artist" checked={check('artist')} onCheckedChange={this.mediaChecked.bind(this)} />
             </div>
           </div>
         </form>

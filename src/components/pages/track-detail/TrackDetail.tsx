@@ -40,8 +40,8 @@ class TrackDetail extends Component<Props, State> {
           imageUrl: imageUrlBig,
           playerSize: 'S',
           data: {
-            album: albumName,
-            'track number': trackNumber,
+            mediatype_album: albumName,
+            track_number: trackNumber,
             duration: `${durationMins} mins ${durationSecs} secs`,
             popularity: `${popularity} / 100`
           }

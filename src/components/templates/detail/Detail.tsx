@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './Detail.scss';
 import goToImg from '../../../assets/goto.svg';
+import { t } from '../../../services/literals';
 
 interface Children {
   id: string,
@@ -22,16 +23,16 @@ class Detail extends Component<Props, State> {
     const externalUrl = `https://open.spotify.com/${type}/${id}`;
     const playerUrl = `https://open.spotify.com/embed/${type}/${id}`;
     const dataItems: {[key: string]: any} = {...data, ...{
-      'OPEN IN SPOTIFY': <a href={externalUrl} target="_blank" rel="noreferrer"><img className="detail__detaildatagoto" alt="Open in spotify" src={goToImg} /></a>}
+      ['detail_open_in_spotify']: <a href={externalUrl} target="_blank" rel="noreferrer"><img className="detail__detaildatagoto" alt={t('detail_open_in_spotify')} src={goToImg} /></a>}
     };
 
     return (
       <div className="detail">
         <div className="detail__template">
           <div className="detail__imgheading">
-            <img className="detail__img" src={imageUrl} alt={`${type} detail`}/>
+            <img className="detail__img" src={imageUrl} alt={t(`detail_type_${type}`)}/>
             <div className="detail__heading">
-              <div className="detail__headingtype">{type.toUpperCase()}</div>
+              <div className="detail__headingtype">{t(`mediatype_${type}`).toUpperCase()}</div>
               <div className="detail__headingtitle">{title}</div>
               <div className="detail__headingsubtitle">{subtitle}</div>
             </div>
@@ -40,7 +41,7 @@ class Detail extends Component<Props, State> {
             <table className="detail__table">
               {Object.keys(dataItems).map(key =>
                 <tr className="detail__datarow">
-                  <td className="detail__datacell">{key.toUpperCase()}</td>
+                  <td className="detail__datacell">{t(key).toUpperCase()}</td>
                   <td className="detail__datacell">{dataItems[key]}</td>
                 </tr>  
               )}
