@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.scss';
-import App from './App';
+import Home from './components/pages/home/Home';
 import reportWebVitals from './reportWebVitals';
-import AlbumDetail from './components/album-detail/AlbumDetail';
-import ArtistDetail from './components/artist-detail/ArtistDetail';
-import TrackDetail from './components/track-detail/TrackDetail';
-import { SearchResults } from './components/search-results/SearchResults';
+import AlbumDetail from './components/pages/album-detail/AlbumDetail';
+import ArtistDetail from './components/pages/artist-detail/ArtistDetail';
+import TrackDetail from './components/pages/track-detail/TrackDetail';
+import { SearchResults } from './components/pages/search-results/SearchResults';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="/" element={<Home />}>
           <Route path="search-results" element={<SearchResults tracks={[]} albums={[]} artists={[]} />} />
           <Route path="album-detail" element={<AlbumDetail />} />
           <Route path="artist-detail" element={<ArtistDetail />} />

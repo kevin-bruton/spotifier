@@ -55,8 +55,6 @@ function responseMapper({ tracks, albums, artists }:any) {
     tracks: tracks?.items?.map((item:any): Track => ({
       id: item.id,
       name: item.name,
-      previewUrl: item.preview_url,
-      externalUrl: item.external_urls?.spotify,
       imageUrl: item.album?.images?.[item.album?.images?.length - 1]?.url,
       imageUrlBig: item.album?.images?.[0]?.url,
       artist: item.artists[0]?.name,
@@ -71,7 +69,6 @@ function responseMapper({ tracks, albums, artists }:any) {
       artist: item.artists[0]?.name,
       imageUrl: item.images?.[item.images?.length - 1]?.url,
       imageUrlBig: item.images?.[0]?.url,
-      externalUrl: item.external_urls?.spotify,
       type: item.album_type,
       releaseDate: item.release_date,
       totalTracks: item.total_tracks
@@ -81,7 +78,6 @@ function responseMapper({ tracks, albums, artists }:any) {
       name: item.name,
       imageUrl: item.images?.[item.images?.length - 1]?.url,
       imageUrlBig: item.images?.[0]?.url,
-      externalUrl: item.external_urls?.spotify,
       popularity: item.popularity,
       genres: item.genres?.join(),
       followers: item.followers?.total

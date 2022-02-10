@@ -1,7 +1,7 @@
 import React from 'react';
 import './InputText.scss';
-import searchIcon from '../../assets/search-icon.svg';
-import clearIcon from '../../assets/close-icon.svg';
+import searchIcon from '../../../assets/search-icon.svg';
+import clearIcon from '../../../assets/close-icon.svg';
 
 type Props = { name: string, label: string, mode: string, placeholder: string, onChange: Function };
 type State = { value: string };

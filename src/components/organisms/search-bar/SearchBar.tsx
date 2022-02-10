@@ -1,9 +1,9 @@
 import React from 'react';
 import './SearchBar.scss';
-import { CheckBox } from '../checkbox/CheckBox';
-import { InputText } from '../input-text/InputText';
-import { ArrowButton } from '../arrow-button/ArrowButton';
-import { AdvQuery } from '../../models/interfaces';
+import { CheckBox } from '../../atoms/checkbox/CheckBox';
+import { InputText } from '../../molecules/input-text/InputText';
+import { ArrowButton } from '../../molecules/arrow-button/ArrowButton';
+import { AdvQuery } from '../../../models/interfaces';
 
 const SEARCH_UPDATE_FREQ = 500;
 

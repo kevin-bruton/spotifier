@@ -1,17 +1,18 @@
 import { Component } from 'react';
-import { /* Link, */ Outlet } from 'react-router-dom';
-import { withRouter, WithRouterProps } from './services/withRouter';
-import './App.scss';
-import { SearchQuery } from './models/interfaces';
-import { getSearchResults } from './services/api'
-import { AppBar } from './components/app-bar/AppBar';
-import { SearchBar } from './components/search-bar/SearchBar';
-import { SearchResults } from './components/search-results/SearchResults';
-import { Track, Album, Artist } from './models/interfaces';
+import { Outlet } from 'react-router-dom';
+import { withRouter, WithRouterProps } from '../../../services/withRouter';
+import './Home.scss';
+import { SearchQuery } from '../../../models/interfaces';
+import { getSearchResults } from '../../../services/api'
+import { AppBar } from '../../organisms/app-bar/AppBar';
+import { SearchBar } from '../../organisms/search-bar/SearchBar';
+import { SearchResults } from '../search-results/SearchResults';
+import { Track, Album, Artist } from '../../../models/interfaces';
 
 type Props = WithRouterProps<{}>;
 type State = { tracks: Array<Track>, albums: Array<Album>, artists: Array<Artist> };
-class App extends Component<Props, State> {
+
+class Home extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -55,4 +56,4 @@ class App extends Component<Props, State> {
   }
 }
 
-export default withRouter(App);
+export default withRouter(Home);

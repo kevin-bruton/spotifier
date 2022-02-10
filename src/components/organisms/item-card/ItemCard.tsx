@@ -1,6 +1,6 @@
 import React from 'react';
 import './ItemCard.scss';
-import imgFallback from '../../assets/fallback-music.svg';
+import imgFallback from '../../../assets/fallback-music.svg';
 
 type Props = { title: string, subtitle: string, imageurl: string };
 type State = { imageUrl: string };

@@ -1,7 +1,7 @@
 import React from 'react';
 import './ArrowButton.scss';
-import arrowUpIcon from '../../assets/arrow-up-icon.svg';
-import arrowDownIcon from '../../assets/arrow-down-icon.svg';
+import arrowUpIcon from '../../../assets/arrow-up-icon.svg';
+import arrowDownIcon from '../../../assets/arrow-down-icon.svg';
 
 type Props = { text: string, onClick: Function };
 type State = { position: string };
@@ -20,7 +20,7 @@ export class ArrowButton extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="buttoncontainer">
+      <div>
         <button type="button" className="buttoncontainer__button" onClick={this.clicked.bind(this)}>
           <span className="button__text">{this.props.text}</span>
           <img className="button__img" src={this.state.position === 'closed' ? arrowDownIcon : arrowUpIcon} alt="Button state"/>

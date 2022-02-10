@@ -16,8 +16,6 @@ export interface SearchQuery {
 export interface Track {
   id: string,
   name: string,
-  previewUrl: string,
-  externalUrl: string,
   imageUrl: string,
   imageUrlBig: string,
   artist: string,
@@ -33,7 +31,6 @@ export interface Album {
   artist: string,
   imageUrl: string,
   imageUrlBig: string,
-  externalUrl: string,
   type: string,
   releaseDate: string,
   totalTracks: number
@@ -44,7 +41,6 @@ export interface Artist {
   name: string,
   imageUrl: string,
   imageUrlBig: string,
-  externalUrl: string,
   popularity: number,
   genres: string,
   followers: number

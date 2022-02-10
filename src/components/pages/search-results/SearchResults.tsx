@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './SearchResults.scss';
-import { ItemCard } from '../item-card/ItemCard';
-import { Track, Album, Artist } from '../../models/interfaces';
+import { ItemCard } from '../../organisms/item-card/ItemCard';
+import { Track, Album, Artist } from '../../../models/interfaces';
 
 type Props = { tracks: Array<Track>, albums: Array<Album>, artists: Array<Artist> };
 
