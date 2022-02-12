@@ -1,35 +1,49 @@
-.inputtext__container {
+.inputtext_labelcontainer {
+  position: relative;
+}
+
+.inputtext__label {
+  position: relative;
+  font-size: 10px;
+  top: 15px;
+  left: 0px;
+  color: var(--text-4);
 }
 
 .inputtext__icons {
   visibility: hidden;
   position: absolute;
-}
 
-.inputtext__searchicon {
-  background-color: var(--neutral-1);
-  position: relative;
-  left: 10px;
-  top: 10px;
-}
+  .inputtext__searchicon {
+    background-color: var(--base-5);
+    position: relative;
+    left: 10px;
+    top: 10px;
+  }
 
-.inputtext__searchicon--visible {
-  visibility: visible;
-}
+  .inputtext__searchicon--visible {
+    visibility: visible;
+  }
+  
+  .inputtext__clearicon {
+    background-color: var(--base-5);
+    position: relative;
+    left: 190px;
+    top: 10px;
+  }
 
-.inputtext__clearicon {
-  background-color: var(--neutral-1);
-  position: relative;
-  left: 190px;
-  top: 10px;
-}
-
-.inputtext__clearicon--visible {
-  visibility: visible;
+  .inputtext__cleariconpath {
+    fill: var(--text-3);
+  }
+  
+  .inputtext__clearicon--visible {
+    visibility: visible;
+  }
 }
 
 .inputtext__input {
-  border: 0;
+  /* border: 0; */
+  border-width: 0.5px;
   border-radius: 500px;
   height: 30px;
   padding: 6px 48px;
@@ -42,16 +56,11 @@
   line-height: 16px;
   text-transform: none;
   cursor: text;
+  background-color: var(--base-5);
 }
 
-.inputtext_labelcontainer {
-  position: relative;
-}
 
-.inputtext__label {
-  position: relative;
-  font-size: 10px;
-  top: 15px;
-  left: 0px;
-  color: var(--text-4);
+
+.inputtext__searchiconpath {
+  fill: var(--text-3);
 }

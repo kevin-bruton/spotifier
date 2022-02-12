@@ -23,7 +23,7 @@ class Detail extends Component<Props, State> {
     const externalUrl = `https://open.spotify.com/${type}/${id}`;
     const playerUrl = `https://open.spotify.com/embed/${type}/${id}`;
     const dataItems: {[key: string]: any} = {...data, ...{
-      ['detail_open_in_spotify']: <a href={externalUrl} target="_blank" rel="noreferrer"><img className="detail__detaildatagoto" alt={t('detail_open_in_spotify')} src={goToImg} /></a>}
+      detail_open_in_spotify: <a href={externalUrl} target="_blank" rel="noreferrer"><img className="detail__detaildatagoto" alt={t('detail_open_in_spotify')} src={goToImg} /></a>}
     };
 
     return (
@@ -39,12 +39,14 @@ class Detail extends Component<Props, State> {
           </div>
           <div className="detail__data">
             <table className="detail__table">
-              {Object.keys(dataItems).map(key =>
-                <tr className="detail__datarow">
-                  <td className="detail__datacell">{t(key).toUpperCase()}</td>
-                  <td className="detail__datacell">{dataItems[key]}</td>
-                </tr>  
-              )}
+              <tbody>
+                {Object.keys(dataItems).map(key =>
+                  <tr key={key} className="detail__datarow">
+                    <td className="detail__datacell">{t(key).toUpperCase()}</td>
+                    <td className="detail__datacell">{dataItems[key]}</td>
+                  </tr>  
+                )}
+              </tbody>
             </table>
           </div>
           <div className="detail__player">

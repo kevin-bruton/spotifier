@@ -21,7 +21,7 @@ export class ArrowButton extends React.Component<Props, State> {
   render() {
     return (
       <div>
-        <button type="button" className="buttoncontainer__button" onClick={this.clicked.bind(this)}>
+        <button type="button" className="button__container" onClick={this.clicked.bind(this)}>
           <span className="button__text">{this.props.text}</span>
           <img className="button__img" src={this.state.position === 'closed' ? arrowDownIcon : arrowUpIcon} alt="Button state"/>
         </button>

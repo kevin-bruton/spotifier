@@ -6,13 +6,20 @@ type Props = { title: string, subtitle: string, imageurl: string };
 type State = { imageUrl: string };
 
 export class ItemCard extends React.Component<Props, State> {
+  _isMounted = false;
+
   constructor(props: Props) {
     super(props);
     this.state = { imageUrl: imgFallback };
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this.loadImage();
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   componentDidUpdate(prevProps: { imageurl: string}) {
@@ -23,7 +30,7 @@ export class ItemCard extends React.Component<Props, State> {
 
   loadImage() {
     const img = new Image();
-    img.onload = () => this.setState({ imageUrl: this.props.imageurl });
+    img.onload = () => this._isMounted && this.setState({ imageUrl: this.props.imageurl });
     img.src = this.props.imageurl;
   }
 

@@ -4,29 +4,12 @@ import { Album } from '../../../models/interfaces';
 import Detail from '../../templates/detail/Detail';
 
 type Props = WithRouterProps<{}>;
-type State = { album: Album };
+type State = {};
 
 class AlbumDetail extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { album: {
-      artist: '',
-      id: '',
-      imageUrl: '',
-      imageUrlBig: '',
-      name: '',
-      type: '',
-      releaseDate: '',
-      totalTracks: 0
-    } };
-  }
-
-  componentDidMount() {
-    this.setState({ album: (this.props.location.state as Album) });
-  }
 
   render() {
-    const { name, id, imageUrlBig, artist, type, releaseDate, totalTracks } = this.state.album;
+    const { name, id, imageUrlBig, artist, type, releaseDate, totalTracks } = this.props.location.state as Album;
     return (
       <Detail>
         {{

@@ -1,12 +1,51 @@
-body {
-  margin: 0;
+*[theme="dark"] {
   font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif,Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  --neutral-1: rgb(255, 255, 255);
+  --neutral-2: rgb(0 ,0, 0);
+  --text-1:rgba(255, 255, 255, 0.9);
+  --text-2:rgba(255, 255, 255, 0.6);
+  --text-3:rgba(255, 255, 255, 0.2);
+  --text-4: rgb(102, 102, 102);
+  --header-1: bold 16px/24px "Open Sans";
+  --border-radius: 11px;
+  --accent-1: rgb(70, 70, 170);
+  --accent-1b: rgb(80, 80, 180);
+  --base-0: rgb(58, 65, 70);
+  --base-1: rgb(20, 27, 32);
+  --base-2: rgb(39, 46, 51);
+  --base-3: rgb(58, 65, 70);
+  --base-4: rgb(77, 84, 89);
+  --base-5: rgb(245, 241, 239);
+  --shadow-1: 0px -2px 2px 2px rgba(0, 0, 0, 0);
+  --spotify-green: #1ED760;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*[theme="light"] {
+  font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif,Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+  --neutral-1: rgb(0, 0, 0);
+  --neutral-2: rgb(255, 255, 255);
+  --text-1: rgba(0, 0, 0, 0.9);
+  --text-2: rgba(0, 0, 0, 0.6);
+  --text-3: rgba(0, 0, 0, 0.2);
+  --text-4: rgb(102, 102, 102);
+  --header-1: bold 16px/24px "Monda";
+  --border-radius: 6px;
+  --accent-1: #1ED760;
+  --accent-1b: rgb(83, 146, 172);
+  --base-0: rgb(245, 241, 239);
+  --base-1: rgb(225, 221, 219);
+  --base-2: rgb(235, 231, 229);
+  --base-3: rgb(245, 241, 239);
+  --base-4: rgb(255, 251, 249);
+  --base-5: rgb(245, 241, 239);
+  --shadow-1:-1px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  --spotify-green: #1ED760;
+}
+
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--neutral-2);
 }

@@ -4,59 +4,59 @@
   text-align: center;
   transition: max-height 1s ease-out;
   overflow: hidden;
-}
 
-.searchbar__showadvanced {
-  max-height: 500px;
-  transition: max-height 1s ease-in;
-}
+  &.searchbar__showadvanced {
+    max-height: 500px;
+    transition: max-height 1s ease-in;
+  }
 
-.searchbar_advancedarea--hide {
-  opacity: 0;
-  transition: opacity 1s;
-}
+  .searchbar__heading {
+    font-size: 2em;
+    color: var(--text-2);
+  }
 
-.searchbar_advancedarea--show {
-  opacity: 1;
-  transition: opacity 1s;
-  transition-delay: 0.5s;
-}
+  .searchbar__form {
+    margin-top: 30px;
+    color: var(--text-1);
+    display: grid;
+    justify-items: center;
 
-.searchbar__heading {
-  font-size: 2em;
-  color: var(--text-2);
-}
+    .searchbar__form-gen-input {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr 1fr;
+      justify-items: center;
+      align-items: end;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
 
-.searchbar__form {
-  margin-top: 30px;
-  color: var(--text-1);
-  display: grid;
-  justify-items: center;
-}
+    .searchbar_advancedarea--hide {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    
+    .searchbar_advancedarea--show {
+      opacity: 1;
+      transition: opacity 1s;
+      transition-delay: 0.5s;
+    }
 
-.searchbar__form-gen-input {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr;
-  justify-items: center;
-  align-items: end;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.searchbar__categoryinputs {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.searchbar__checkboxesheader {
-  margin-top: 20px;
-}
-
-.searchbar__checkboxes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    .searchbar__categoryinputs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .searchbar__checkboxesheader {
+      margin-top: 20px;
+    }
+    
+    .searchbar__checkboxes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

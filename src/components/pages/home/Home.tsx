@@ -41,7 +41,7 @@ class Home extends Component<Props, State> {
     const pathname = window.location.pathname;
 
     return (
-      <div className="app__theme--dark">
+      <div>
         <AppBar />
         <Outlet />
         {pathname === '/'

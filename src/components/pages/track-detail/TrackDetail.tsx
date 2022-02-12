@@ -4,30 +4,12 @@ import { Track } from '../../../models/interfaces';
 import Detail from '../../templates/detail/Detail';
 
 type Props = WithRouterProps<{}>;
-type State = { track: Track };
+type State = {};
 
 class TrackDetail extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { track: {
-      artist: '',
-      id: '',
-      imageUrl: '',
-      imageUrlBig: '',
-      name: '',
-      albumName: '',
-      trackNumber: 0,
-      durationMs: 0,
-      popularity: 0
-    } };
-  }
-
-  componentDidMount() {
-    this.setState({ track: (this.props.location.state as Track) });
-  }
 
   render() {
-    const { name, id, imageUrlBig, artist, albumName, trackNumber, durationMs, popularity } = this.state.track;
+    const { name, id, imageUrlBig, artist, albumName, trackNumber, durationMs, popularity } = this.props.location.state as Track;
     const durationMins = Math.floor(durationMs / 1000 / 60);
     const durationSecs = Math.round((durationMs / 1000) - (durationMins * 60));
     return (

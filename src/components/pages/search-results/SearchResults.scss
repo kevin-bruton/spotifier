@@ -1,5 +1,5 @@
 .searchresults {
-  background-color: var(--base-1);
+  background-color: var(--neutral-2);
   color: var(--text-1);
   display: grid;
 }
@@ -21,7 +21,7 @@
 }
 
 .searchresults__title {
-  background-color: var(--base-1);
+  background-color: var(--neutral-2);
   padding: 10px;
   text-align: center;
   font-weight: 600;
@@ -32,4 +32,8 @@
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.searchresults__link {
+  text-decoration: none;
 }
