@@ -25,7 +25,7 @@ function getLiterals(): {[key: string]: Translations} {
       es: 'Spotify'
     },
     searchbar_heading: {
-      en: 'Search for you favourite artists, albums and tracks',
+      en: 'Search for your favourite artists, albums and tracks',
       es: 'Busca tus artistas, álbumes y canciones favoritos'
     },
     searchbar_main_input_placeholder: {

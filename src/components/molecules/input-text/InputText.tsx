@@ -26,7 +26,7 @@ export class InputText extends React.Component<Props, State> {
     return (
       <div data-testid="inputtext">
         <div className="inputtext__labelcontainer">
-          <span className="inputtext__label">{this.props.label.toUpperCase()}</span>
+          <label htmlFor={this.props.name} className="inputtext__label">{this.props.label.toUpperCase()}</label>
         </div>
         <span className="inputtext__icons">
           <img src={searchIcon} className={`inputtext__searchicon${this.props.mode === 'search' ? ' inputtext__searchicon--visible' : ''}`} alt="Search" />
@@ -34,6 +34,7 @@ export class InputText extends React.Component<Props, State> {
         </span>
         <span>
           <input
+            id={this.props.name}
             alt={this.props.name.replace('_', ' ')}
             type="text"
             className={`inputtext__input ${this.props.mode}`}
