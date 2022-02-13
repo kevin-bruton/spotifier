@@ -24,7 +24,7 @@ export class InputText extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <div data-testid="inputtext">
         <div className="inputtext__labelcontainer">
           <span className="inputtext__label">{this.props.label.toUpperCase()}</span>
         </div>

@@ -10,7 +10,7 @@ export class CheckBox extends React.Component<Props, {}> {
   render() {
     return (
       <label className="checkbox__label">
-        <input type="checkbox" className="checkbox__input" checked={this.props.checked} onChange={this.checked.bind(this)}/>
+        <input type="checkbox" className="checkbox__input" checked={this.props.checked} alt={`${this.props.label} checkbox`} onChange={this.checked.bind(this)}/>
         <span className="checkbox__span">{this.props.label}</span> 
       </label>
     );
