@@ -108,7 +108,7 @@ export class SearchBar extends React.Component<Props, State> {
               <InputText mode="search" placeholder="" label={t('mediatype_artist')} name="search_artist" onChange={this.searchChanged.bind(this)} />
               <InputText mode="search" placeholder="" label={t('mediatype_album')} name="search_album" onChange={this.searchChanged.bind(this)} />
               <InputText mode="search" placeholder="" label={t('mediatype_track')} name="search_track" onChange={this.searchChanged.bind(this)} />
-              <InputText mode="search" placeholder="" label={t('detail_year')}name="search_year" onChange={this.searchChanged.bind(this)} />
+              <InputText mode="search" placeholder="" label={t('detail_year')} name="search_year" onChange={this.searchChanged.bind(this)} />
               <InputText mode="search" placeholder="" label={t('detail_genre')} name="search_genre" onChange={this.searchChanged.bind(this)} />
             </div>
             <div className="searchbar__checkboxesheader">{t('searchbar_mediatype_selection_instruction')}</div>

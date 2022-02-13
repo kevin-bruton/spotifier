@@ -30,10 +30,17 @@ export class InputText extends React.Component<Props, State> {
         </div>
         <span className="inputtext__icons">
           <img src={searchIcon} className={`inputtext__searchicon${this.props.mode === 'search' ? ' inputtext__searchicon--visible' : ''}`} alt="Search" />
-          <img src={clearIcon} className={`inputtext__clearicon${this.state.value ? ' inputtext__clearicon--visible' : ''}`} alt="Clear search" onClick={this.clear.bind(this)}/>
+          <img src={clearIcon} className={`inputtext__clearicon${this.state.value ? ' inputtext__clearicon--visible' : ''}`} alt={`clear ${this.props.name.replace('_', ' ')}`} onClick={this.clear.bind(this)}/>
         </span>
         <span>
-          <input type="text" className={`inputtext__input ${this.props.mode}`} placeholder={this.props.placeholder} value={this.state.value} onChange={this.onChange.bind(this)}/>
+          <input
+            alt={this.props.name.replace('_', ' ')}
+            type="text"
+            className={`inputtext__input ${this.props.mode}`}
+            placeholder={this.props.placeholder}
+            value={this.state.value}
+            onChange={this.onChange.bind(this)}
+          />
         </span>
       </div>
     );

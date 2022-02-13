@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { withRouter, WithRouterProps }  from '../../../services/withRouter';
+import { WithRouterProps }  from '../../../services/withRouter';
 import { Album } from '../../../models/interfaces';
 import Detail from '../../templates/detail/Detail';
 
@@ -30,4 +30,4 @@ class AlbumDetail extends Component<Props, State> {
   }
 }
 
-export default withRouter(AlbumDetail);
+export default AlbumDetail;

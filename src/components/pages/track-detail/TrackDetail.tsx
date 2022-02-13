@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { withRouter, WithRouterProps }  from '../../../services/withRouter';
+import { WithRouterProps }  from '../../../services/withRouter';
 import { Track } from '../../../models/interfaces';
 import Detail from '../../templates/detail/Detail';
 
@@ -33,4 +33,4 @@ class TrackDetail extends Component<Props, State> {
   }
 }
 
-export default withRouter(TrackDetail);
+export default TrackDetail;

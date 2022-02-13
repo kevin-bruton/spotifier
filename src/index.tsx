@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.scss';
 import Home from './components/pages/home/Home';
 import reportWebVitals from './reportWebVitals';
+import { withRouter }  from './services/withRouter';
 import AlbumDetail from './components/pages/album-detail/AlbumDetail';
 import ArtistDetail from './components/pages/artist-detail/ArtistDetail';
 import TrackDetail from './components/pages/track-detail/TrackDetail';
@@ -15,15 +16,19 @@ import { setTheme } from './services/theme';
 setLanguage('en');
 setTheme('dark');
 
+const ArtistDetailPage = withRouter(ArtistDetail);
+const AlbumDetailPage = withRouter(AlbumDetail);
+const TrackDetailPage = withRouter(TrackDetail);
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="search-results" element={<SearchResults tracks={[]} albums={[]} artists={[]} />} />
-          <Route path="album-detail" element={<AlbumDetail />} />
-          <Route path="artist-detail" element={<ArtistDetail />} />
-          <Route path="track-detail" element={<TrackDetail />} />
+          <Route path="album-detail" element={<AlbumDetailPage />} />
+          <Route path="artist-detail" element={<ArtistDetailPage />} />
+          <Route path="track-detail" element={<TrackDetailPage />} />
         </Route>
       </Routes>
     </BrowserRouter>  

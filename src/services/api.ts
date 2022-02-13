@@ -2,8 +2,7 @@ import { Buffer } from 'buffer';
 import { SearchQuery, Track, Album, Artist } from '../models/interfaces'
 
 export {
-  getSearchResults,
-  getSearchResultsViaUrl
+  getSearchResults
 }
 
 let token: string;
@@ -17,11 +16,11 @@ async function getAuthToken (): Promise<string> {
     'Authorization': `Basic ${Buffer.from(credentials).toString('base64')}`,
     'Content-Type': 'application/x-www-form-urlencoded'
   };
-  const body: URLSearchParams = new URLSearchParams({ grant_type: 'client_credentials' })
-  const resp: Response = await fetch(url, { headers, method: 'POST', body })
+  const body: URLSearchParams = new URLSearchParams({ grant_type: 'client_credentials' });
+  const resp: Response = await fetch(url, { headers, method: 'POST', body });
   const tokenData: { access_token: string, expires_in: number, token_type: string }
     = await resp.json();
-  return tokenData.access_token
+  return tokenData.access_token;
 }
 
 async function getSearchResults ({ genQuery, advQuery, mediaTypes }: SearchQuery, offset: number = 0): Promise<any> {
@@ -83,12 +82,4 @@ function responseMapper({ tracks, albums, artists }:any) {
       followers: item.followers?.total
     }))
   };
-}
-
-async function getSearchResultsViaUrl (url: string) {
-  token = token || await getAuthToken();
-  const headers: HeadersInit = { Authorization: `Bearer ${token}` };
-  const resp = await fetch(url, { headers });
-  const json = await resp.json();
-  return json;
 }

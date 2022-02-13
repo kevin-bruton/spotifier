@@ -37,7 +37,7 @@ class Detail extends Component<Props, State> {
               <div className="detail__headingsubtitle">{subtitle}</div>
             </div>
           </div>
-          <div className="detail__data">
+          <div data-testid="detail_data" className="detail__data">
             <table className="detail__table">
               <tbody>
                 {Object.keys(dataItems).map(key =>
